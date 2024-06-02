@@ -9,7 +9,12 @@ module.exports = {
     es2021: true,
   },
   ignorePatterns: [".eslintrc.*"],
-  extends: ["plugin:react/recommended", "airbnb", "eslint:recommended"],
+  extends: [
+    "plugin:react/recommended",
+    "airbnb",
+    "eslint:recommended",
+    "plugin:i18next/recommended",
+  ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -19,7 +24,7 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: ["@stylistic", "react", "import"],
+  plugins: ["@stylistic", "react", "import", "i18next"],
   rules: {
     "no-console": "warn",
     "no-unused-vars": "warn",
@@ -64,6 +69,7 @@ module.exports = {
       },
     ],
     "no-underscore-dangle": "off",
+    "i18next/no-literal-string": [2, { markupOnly: true }],
   },
   globals: {
     __IS_DEV__: true,
