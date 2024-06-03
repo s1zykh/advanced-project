@@ -7,8 +7,9 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
-  ignorePatterns: [".eslintrc.*"],
+  ignorePatterns: [".eslintrc.*", "*config.*", "*.test.*"],
   extends: [
     "plugin:react/recommended",
     "airbnb",
