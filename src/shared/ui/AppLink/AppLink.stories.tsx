@@ -13,7 +13,6 @@ const meta: Meta<typeof AppLink> = {
     args: {
         to: '/',
     },
-
 };
 
 export default meta;
