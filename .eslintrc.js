@@ -30,7 +30,8 @@ module.exports = {
   rules: {
     "no-console": "warn",
     "no-unused-vars": "warn",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": 0,
+    "global-require": 0,
     "no-shadow": "off",
     indent: [2, 4],
     "max-len": [2, { code: 120 }],
