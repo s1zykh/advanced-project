@@ -16,7 +16,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:i18next/recommended",
   ],
-  //
+
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
