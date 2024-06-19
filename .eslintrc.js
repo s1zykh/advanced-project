@@ -52,6 +52,7 @@ module.exports = {
     "react/jsx-props-no-spreading": "warn",
     "react/function-component-definition": "off",
     "import/no-unresolved": "off",
+     "react/jsx-closing-tag-location": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "import/no-extraneous-dependencies": "off",
