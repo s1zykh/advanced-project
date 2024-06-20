@@ -8,3 +8,4 @@ export function renderWithTranslation(component: ReactNode) {
         {component}
     </I18nextProvider>);
 }
+//
