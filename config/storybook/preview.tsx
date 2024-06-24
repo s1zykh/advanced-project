@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Theme } from '../../src/app/providers/ThemeProvider';
-
+import { Theme, ThemeProvider } from '../../src/app/providers/ThemeProvider';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
@@ -13,9 +12,12 @@ const preview: Preview = {
         },
     },
     decorators: [ (Story) => (
-        <div className={`app ${Theme.LIGHT}`}>
-            <Story />
-        </div>
+        <ThemeProvider>
+            <div className={`app ${Theme.LIGHT}`}>
+                <Story />
+            </div>
+        </ThemeProvider>
+
     ), (Story) => (
         <BrowserRouter>
             <Story />
