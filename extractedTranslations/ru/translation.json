@@ -1,4 +1,7 @@
 {
+  "decrement": "decrement",
+  "increment": "increment",
+  "log": "log",
   "throw error": "throw error",
   "Войти": "Войти",
   "Главная": "Главная",

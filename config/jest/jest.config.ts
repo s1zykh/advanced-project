@@ -7,16 +7,9 @@ import type { Config } from "jest";
 import path from "path";
 
 const config: Config = {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "C:\\Users\\s1zyk\\AppData\\Local\\Temp\\jest",
-
-  // Automatically clear mock calls, instances, contexts and results before every test
+  globals: {
+    "__IS_DEV__": true,
+  },
   clearMocks: true,
   testEnvironment: "jsdom",
   coveragePathIgnorePatterns: ["\\\\node_modules\\\\"],
