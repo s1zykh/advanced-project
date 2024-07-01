@@ -65,8 +65,8 @@ module.exports = {
       2,
       {
         groups: [
-          "builtin",
-          "external",
+          ["builtin",
+          "external"],
           [ "internal",
             "parent",
             "sibling",
