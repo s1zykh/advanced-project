@@ -20,7 +20,6 @@ const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, {rejectValu
             thunkApi.dispatch(userActions.setAuthData(response.data));
             return response.data;
         } catch (e) {
-            console.log(e);
             return thunkApi.rejectWithValue('Вы ввели неверный логин или пароль');
         }
     },

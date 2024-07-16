@@ -1,3 +1,2 @@
-export { LoginForm } from './ui/LoginForm/LoginForm';
+export { LoginModal } from './ui/LoginfModal/LoginModal';
 export { LoginSchema } from './model/types/LoginSchema';
-export { loginReducer } from './model/slice/loginSlice';

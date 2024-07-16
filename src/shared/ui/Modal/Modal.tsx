@@ -25,6 +25,7 @@ export function Modal(props: ModalProps) {
 
     const [ isClosing, setIsClosing ] = useState(false);
     const [ isMonted, setIsMonted ] = useState(false);
+
     const timerRef = useRef <ReturnType<typeof setTimeout>>();
 
     useEffect(() => {

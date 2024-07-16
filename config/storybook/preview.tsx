@@ -12,7 +12,7 @@ const preview: Preview = {
             date: /Date$/,
         },
     },
-    decorators: [ (Story) => (
+    decorators: [ (Story, { parameters }) => (
         <ThemeProvider>
             <div className={`app ${Theme.LIGHT}`}>
                 <Story />
@@ -23,11 +23,6 @@ const preview: Preview = {
         <BrowserRouter>
             <Story />
         </BrowserRouter>
-    ), (Story) => (
-        <StoreProvider initialState={{ loginForm: { username: '123', password: '123' } }}>
-            <Story />
-        </StoreProvider>
-
     ) ],
 };
 

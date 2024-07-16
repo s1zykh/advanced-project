@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect } from 'react';
 import { AppRouter } from 'app/providers/router';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -10,11 +10,10 @@ import { userActions } from 'entities/User';
 function App() {
     const { theme } = useTheme();
     const dispacth = useDispatch();
+
     useEffect(() => {
         dispacth(userActions.initAuthData());
     }, [ dispacth ]);
-
-    const [ isOpen, setIsOpen ] = useState(false);
 
     return (
         <div className={classNames('app', {}, [ theme ])}>
