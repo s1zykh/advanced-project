@@ -28,5 +28,5 @@ test('error login', async () => {
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(mockedAxios.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('rejected');
-    expect(result.payload).toBe('error');
+    expect(result.payload).toBe('Вы ввели неверный логин или пароль');
 });
