@@ -28,6 +28,11 @@ export function Modal(props: ModalProps) {
 
     const timerRef = useRef <ReturnType<typeof setTimeout>>();
 
+    const mods: Record<string, boolean> = {
+        [cls.opened]: isOpen,
+        [cls.isClosed]: isClosing,
+    };
+
     useEffect(() => {
         if (isOpen) {
             setIsMonted(true);
@@ -49,12 +54,9 @@ export function Modal(props: ModalProps) {
             closeHandler();
         }
     }, [ closeHandler ]);
+
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
-    };
-    const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen,
-        [cls.isClosed]: isClosing,
     };
 
     useEffect(() => {

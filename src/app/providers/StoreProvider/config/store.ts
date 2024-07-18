@@ -27,3 +27,5 @@ export function craeteReduxStore(
 
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof craeteReduxStore>['dispatch']

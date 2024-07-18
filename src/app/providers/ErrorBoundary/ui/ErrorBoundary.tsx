@@ -36,7 +36,6 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
                 </Suspense>
             );
         }
-
         return children;
     }
 }

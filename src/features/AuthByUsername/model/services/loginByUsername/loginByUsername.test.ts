@@ -30,3 +30,4 @@ test('error login', async () => {
     expect(result.meta.requestStatus).toBe('rejected');
     expect(result.payload).toBe('Вы ввели неверный логин или пароль');
 });
+
