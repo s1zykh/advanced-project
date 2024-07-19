@@ -13,8 +13,6 @@ const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig
     async (authData, { dispatch, extra, rejectWithValue }) => {
         try {
             const response = await extra.api.post<User>('/login', authData);
-            console.log('response', response);
-
             if (!response.data) {
                 throw new Error();
             }
