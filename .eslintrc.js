@@ -34,6 +34,7 @@ module.exports = {
     "linebreak-style": 0,
     "global-require": 0,
     "no-shadow": "off",
+    "react/no-deprecated": "off",
     indent: [2, 4],
     "max-len": [2, { code: 120 }],
     "array-bracket-spacing": [2, "always"],
@@ -86,6 +87,7 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true
   },
   overrides: [
     {
