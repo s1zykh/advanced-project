@@ -26,9 +26,10 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: ["@stylistic", "react", "import", "i18next", "react-hooks"],
+  plugins: ["@stylistic", "react", "import", "i18next", "react-hooks", "@typescript-eslint"],
   rules: {
     "no-console": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
     "no-unused-vars": "warn",
     "linebreak-style": 0,
     "global-require": 0,
