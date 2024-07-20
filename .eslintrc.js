@@ -29,6 +29,7 @@ module.exports = {
   plugins: ["@stylistic", "react", "import", "i18next", "react-hooks", "@typescript-eslint"],
   rules: {
     "no-console": "warn",
+    "no-undef": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "no-unused-vars": "warn",
     "linebreak-style": 0,
@@ -62,6 +63,7 @@ module.exports = {
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "no-param-reassign": "off",
+    "default-param-last": "off",
     "import/no-extraneous-dependencies": "off",
     "import/order": [
       2,

@@ -1,5 +1,5 @@
 import {
-    ReducersMapObject, configureStore, DeepPartial,
+    ReducersMapObject, configureStore,
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
