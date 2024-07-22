@@ -10,6 +10,7 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<stri
             const response = await extra.api.get<Profile>('/profile');
             return response.data;
         } catch (e) {
+            console.log(e);
             return rejectWithValue('Нет такого профиля');
         }
     },
