@@ -2,16 +2,18 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
-    fetchProfileData, ProfileCard, profileReducer, getProfileIsLoading, getProfileIsError,
+    fetchProfileData, ProfileCard, profileReducer, getProfileLoading, getProfileError,
     profileActions,
     getProfileReadonly,
     getProfileForm,
+    getProfileValidateErrors,
 } from 'entities/Profile';
 import { useEffect, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { TextTheme, Text } from 'shared/ui/Text/Text';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -27,12 +29,15 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const dispatch = useAppDispatch();
 
     const formData = useSelector(getProfileForm);
-    const isLoading = useSelector(getProfileIsLoading);
-    const error = useSelector(getProfileIsError);
+    const isLoading = useSelector(getProfileLoading);
+    const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [ dispatch ]);
 
     const onChangeFirstname = useCallback((value?: string) => {
@@ -70,6 +75,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [ className ])}>
+                {validateErrors?.length && validateErrors.map((error) => (
+                    <Text theme={TextTheme.ERROR} text={error} key={error} />
+                ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

@@ -18,8 +18,11 @@ export {
     ProfileCard,
 } from './ui/ProfileCard/ProfileCard';
 
-export { getProfileIsData } from './model/selectors/getProfileIsData/getProfileIsData';
-export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading';
-export { getProfileIsError } from './model/selectors/getProfileIsError/getProfileIsError';
+export { ValidateProfileError } from './model/types/profile';
+
+export { getProfileData } from './model/selectors/getProfileData/getProfileData';
+export { getProfileLoading } from './model/selectors/getProfileLoading/getProfileLoading';
+export { getProfileError } from './model/selectors/getProfileError/getProfileError';
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
+export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors';
