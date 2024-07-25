@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername/ui/LoginfModal/LoginModal';
 import { getUserAuthData, userActions } from 'entities/User';
-import { useDispatch, useSelector } from 'react-redux';
 
 import cls from './Navbar.module.scss';
 
