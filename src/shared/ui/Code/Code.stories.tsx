@@ -1,21 +1,20 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
 import { Code } from './Code';
 
-export default {
-    title: 'shared/Code',
-    component: Code,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof Code>;
+const meta: Meta<typeof Code> = {
+    title: "shared/Code",
+    component: Code
+}
 
-const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
+export default meta
 
-export const Normal = Template.bind({});
-Normal.args = {
-    text: 'export default {\n'
+type Story = StoryObj<typeof Code>
+
+export const Normal: Story = {
+    args: {
+        text: 'export default {\n'
         + '    title: \'shared/Code\',\n'
         + '    component: Code,\n'
         + '    argTypes: {\n'
@@ -26,4 +25,6 @@ Normal.args = {
         + 'const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;\n'
         + '\n'
         + 'export const Normal = Template.bind({});',
+    }
 };
+

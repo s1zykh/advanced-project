@@ -62,6 +62,7 @@ module.exports = {
     "react/jsx-closing-tag-location": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
+    "react/no-array-index-key": "off",
     "no-param-reassign": "off",
     "default-param-last": "off",
     "import/no-extraneous-dependencies": "off",

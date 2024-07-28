@@ -4,7 +4,7 @@ import { AboutPage } from "pages/AboutPage";
 import { NotFoundPage } from "pages/NotFoundPage";
 import { ProfilePageAsync } from "pages/ProfilePage/ui/ProfilePage.async";
 
-import { ArticlesPage } from "pages/ArticlePage";
+import { ArticlesPage } from "pages/ArticlesPage";
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage';
 
 export type AppRoutesProps = RouteProps & {
@@ -23,9 +23,9 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",
   [AppRoutes.ABOUT]: "/about",
+  [AppRoutes.PROFILE]: "/profile/",  // + :id
   [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLE_DETAILS]: '/articles/',
-  [AppRoutes.PROFILE]: "/profile",
+  [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
   [AppRoutes.NOT_FOUND]: "*",
 };
 
@@ -44,7 +44,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     authOnly: true,
 },
 [AppRoutes.PROFILE]: {
-  path: RoutePath.profile,
+  path: `${RoutePath.profile}:id`,
   element: <ProfilePageAsync/>,
   authOnly: true,
 },

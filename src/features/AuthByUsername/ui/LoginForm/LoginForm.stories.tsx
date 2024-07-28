@@ -22,21 +22,9 @@ decorators: [StoreDecorator({ loginForm: { username: '123', password: '123' }})]
 };
 
 export const withError: Story = {
-    decorators: [(Story, {parameters}) => {
-        return (
-            <StoreProvider initialState={{ loginForm: { username: '123', password: '123', error: "ERROR"} }}>
-                <Story />
-            </StoreProvider>
-        )
-    }]
+    decorators: [StoreDecorator({ loginForm: { username: '123', password: '123', error: "ERROR" }})]
 };
 
 export const Loading: Story = {
-    decorators: [(Story, {parameters}) => {
-        return (
-            <StoreProvider initialState={{ loginForm: {isLoading: true}}}>
-                <Story />
-            </StoreProvider>
-        )
-    }]
+    decorators: [StoreDecorator({ loginForm: {isLoading: true}})]
 };

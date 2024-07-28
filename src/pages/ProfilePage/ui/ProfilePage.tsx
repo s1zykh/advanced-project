@@ -1,3 +1,9 @@
+import { useCallback } from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { TextTheme, Text } from 'shared/ui/Text/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
@@ -7,12 +13,10 @@ import {
     getProfileForm,
     getProfileValidateErrors,
 } from 'entities/Profile';
-import { useEffect, useCallback } from 'react';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { TextTheme, Text } from 'shared/ui/Text/Text';
+import { getUserAuthData } from 'entities/User';
+import { Page } from 'shared/ui/Page/Page';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -30,12 +34,15 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const userAuthData = useSelector(getUserAuthData);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    const { id } = useParams<{id: string}>();
+
+    useInitialEffect(() => {
+        if (id && id === userAuthData?.id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [ dispatch ]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -71,7 +78,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames('', {}, [ className ])}>
+            <Page className={classNames('', {}, [ className ])}>
                 {validateErrors?.length && validateErrors.map((error) => (
                     <Text theme={TextTheme.ERROR} text={error} key={error} />
                 ))}
@@ -89,7 +96,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

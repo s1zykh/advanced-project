@@ -17,7 +17,7 @@ type Story = StoryObj<typeof Input>;
 export const Primary: Story = {
     args: {
         placeholder: 'Text',
-        value: "ya krutoi"
+        value: "Hello World!!!"
     },
 };
 
