@@ -18,12 +18,12 @@ export const StoreProvider = (props: StoreProviderProps) => {
         asyncReducers,
     } = props;
 
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const store = craeteReduxStore(
         initialState as StateSchema,
         asyncReducers as ReducersMapObject<StateSchema>,
-        navigate,
+        // navigate,
     );
     return (
         <Provider store={store}>

@@ -11,6 +11,7 @@ import {
 }
     from 'pages/ArticlesPage/model/slices/articlesPageSlice';
 import {
+    getArticlesPageInited,
     getArticlesPageIsLoading,
     getArticlesPageView,
 }
@@ -20,6 +21,7 @@ import { fetchArticlesList } from 'pages/ArticlesPage/model/services/fetchArticl
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 
 import cls from './ArticlesPage.module.scss';
 
@@ -49,14 +51,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     }, [ dispatch ]);
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1,
-        }));
+        dispatch(initArticlesPage());
     });
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page onScrollEnd={onLoadNextPart} className={classNames(cls.ArticlesPage, {}, [ className ])}>
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
                 <ArticleList

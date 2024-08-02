@@ -13,7 +13,6 @@ import { createReducerManager } from './reducerManager';
 export function craeteReduxStore(
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -23,7 +22,6 @@ export function craeteReduxStore(
     const reducerManager = createReducerManager(rootReducers);
     const extraArg: ThunkExtraArg = {
         api: $api,
-        navigate,
     };
 
     const store = configureStore({
