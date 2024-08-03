@@ -1,5 +1,5 @@
 import {
-    EnhancedStore, ReducersMapObject, AnyAction, Reducer,
+    EnhancedStore, AnyAction, Reducer,
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { AxiosInstance } from 'axios';
@@ -10,9 +10,11 @@ import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/AuthByUsername/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { UISchema } from 'features/UI/model/types/UISchema';
 
 export interface StateSchema {
     user: UserSchema
+    ui: UISchema
     loginForm?:LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
@@ -32,7 +34,7 @@ export interface ReducerManager {
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-reducerManager: ReducerManager
+    reducerManager: ReducerManager
 }
 
 export interface ThunkExtraArg {

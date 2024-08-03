@@ -16,7 +16,7 @@ import {
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { getUserAuthData } from 'entities/User';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/Page';
 
 const reducers: ReducersList = {
     profile: profileReducer,
