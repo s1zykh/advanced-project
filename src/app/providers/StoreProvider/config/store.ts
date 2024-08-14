@@ -9,7 +9,7 @@ import { uiReducer } from 'features/UI';
 import { ThunkExtraArg, StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
-export function craeteReduxStore(
+export function createReduxStore(
     initialState?: StateSchema,
     asyncReducers?: ReducersMapObject<StateSchema>,
 ) {
@@ -41,4 +41,4 @@ export function craeteReduxStore(
     return store;
 }
 
-export type AppDispatch = ReturnType<typeof craeteReduxStore>['dispatch']
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']

@@ -23,9 +23,9 @@ export enum AppRoutes {
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: "/",
   [AppRoutes.ABOUT]: "/about",
-  [AppRoutes.PROFILE]: "/profile/",  // + :id
+  [AppRoutes.PROFILE]: "/profile/", 
   [AppRoutes.ARTICLES]: '/articles',
-  [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + :id
+  [AppRoutes.ARTICLE_DETAILS]: '/articles/', 
   [AppRoutes.NOT_FOUND]: "*",
 };
 

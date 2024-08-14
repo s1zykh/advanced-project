@@ -5,8 +5,6 @@ import 'app/styles/index.scss';
 
 import type { Meta, StoryObj } from '@storybook/react';
 import  LoginForm from './LoginForm';
-import { StoreProvider } from 'app/providers/StoreProvider';
-import { defaulAsyncReducers } from 'shared/const/defaultAsyncReducers';
 
 const meta: Meta<typeof LoginForm> = {
     title: 'features/LoginForm',

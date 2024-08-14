@@ -7,3 +7,7 @@ export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 
 export { ArticleView } from './model/types/article';
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
+export { ArticleSortField } from './model/types/article';
+export { ArticleType } from './model/types/article';
+export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
