@@ -37,7 +37,7 @@ module.exports = {
     "no-shadow": "off",
     "react/no-deprecated": "off",
     indent: [2, 4],
-    "max-len": [2, { code: 120 }],
+    "max-len": "off",
     "array-bracket-spacing": [2, "always"],
     "function-call-argument-newline": [2, "consistent"],
     "function-paren-newline": [2, "multiline"],

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLAttributeAnchorTarget } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Article, ArticleView } from 'entities/Article/model/types/article';
 
@@ -9,8 +9,9 @@ import cls from './ArticleList.module.scss';
 interface ArticleListItemProps {
     className?: string;
     articles: Article[];
-    isLoading: boolean;
-    view: ArticleView
+    isLoading?: boolean;
+    view?: ArticleView
+    target?: HTMLAttributeAnchorTarget
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -24,11 +25,12 @@ export const ArticleList = (props: ArticleListItemProps) => {
         className,
         articles,
         isLoading,
+        target,
         view = ArticleView.SMALL,
     } = props;
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem article={article} view={view} className={cls.card} key={article.id} />
+        <ArticleListItem article={article} target={target} view={view} className={cls.card} key={article.id} />
     );
 
     return (
