@@ -1,29 +1,29 @@
 import { useSelector } from 'react-redux';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ArticleView, ArticleViewSelector } from 'entities/Article';
 import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Page } from 'widgets/Page/Page';
+
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
     getArticles,
     articlesPageActions,
     articlesPageReducer,
 }
-    from 'pages/ArticlesPage/model/slices/articlesPageSlice';
+    from '../../model/slices/articlesPageSlice';
+import cls from './ArticlesPage.module.scss';
+import { ArticlesPageFilters } from '../ArticlesPageFilter/ArticlesPageFilters';
 import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 }
-    from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgets/Page/Page';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
-
-import cls from './ArticlesPage.module.scss';
-import { ArticlesPageFilters } from '../ArticlesPageFilter/ArticlesPageFilters';
+    from '../../model/selectors/articlesPageSelectors';
 
 interface ArticlesPageProps {
     className?: string;

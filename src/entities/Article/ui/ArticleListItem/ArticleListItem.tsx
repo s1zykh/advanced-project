@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
-import {
-    Article, ArticleView, ArticleBlockType, ArticleTextBlock,
-} from 'entities/Article/model/types/article';
 import { Card } from 'shared/ui/Card/Card';
 import { Text } from 'shared/ui/Text/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -14,6 +11,9 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 
+import {
+    Article, ArticleView, ArticleBlockType, ArticleTextBlock,
+} from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 

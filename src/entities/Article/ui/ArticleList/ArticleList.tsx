@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { List, ListRowProps, WindowScroller } from 'react-virtualized';
 import { PAGE_ID } from 'widgets/Page/Page';
 
+import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Article, ArticleView } from '../../model/types/article';
@@ -36,11 +36,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     const isBig = view === ArticleView.BIG;
 
-    const itemsPerRow = isBig ? 1 : 3;
+    const itemsPerRow = isBig ? 1 : 4;
     const rowCount = isBig ? articles.length : Math.ceil(articles.length / itemsPerRow);
 
     const rowRender = ({
-        index, isScrolling, key, style,
+        index, key, style,
     }: ListRowProps) => {
         const items = [];
         const fromIndex = index * itemsPerRow;

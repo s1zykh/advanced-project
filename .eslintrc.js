@@ -14,9 +14,9 @@ module.exports = {
     "plugin:react/recommended",
     "airbnb",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:i18next/recommended",
   ],
-
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaFeatures: {
@@ -26,9 +26,18 @@ module.exports = {
     sourceType: "module",
   },
 
-  plugins: ["@stylistic", "react", "import", "i18next", "react-hooks", "@typescript-eslint"],
+  plugins: [
+    "@stylistic", 
+    "react", 
+    "import", 
+    "i18next", 
+    "react-hooks", 
+    "s1zykh-test-plugin"
+  ],
   rules: {
     "no-console": "warn",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "s1zykh-test-plugin/path-checker": "error",
     "no-undef": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "no-unused-vars": "warn",

@@ -7,23 +7,23 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { ArticleDetails } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getArticleComments }
-    from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getArticleCommentsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchCommentsByArticleId }
-    from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { AddCommentForm } from 'features/addCommentForm';
-import { addCommentForArticle }
-    from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { Page } from 'widgets/Page/Page';
-import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
-import { getArticleRecommendations } from 'pages/ArticleDetailsPage/model/slices/articleDetailsPageRecommendationsSlice';
-import { getArticleRecommendationsIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recommendations';
-import { fetchArticleRecommendations } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { ArticleList } from 'entities/Article/ui/ArticleList/ArticleList';
 
+import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
+import { addCommentForArticle }
+    from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { fetchCommentsByArticleId }
+    from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { articleDetailsPageReducer } from '../../model/slices/index';
+import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { getArticleComments }
+    from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
