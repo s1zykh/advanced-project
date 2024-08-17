@@ -37,6 +37,7 @@ module.exports = {
   rules: {
     "no-console": "warn",
     "@typescript-eslint/ban-ts-comment": "warn",
+    "react/jsx-no-useless-fragment": "warn",
     "s1zykh-test-plugin/path-checker": "error",
     "no-undef": "off",
     "@typescript-eslint/no-unused-vars": "warn",
