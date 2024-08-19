@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextTheme, TextAlign } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { ProfilePageHeader } from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { CurrencySelect, Currency } from 'entities/Currency';
 import { CountrySelect, Country } from 'entities/Country';
@@ -74,7 +73,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     return (
         <VStack gap="8" max className={classNames(cls.ProfileCard, mods, [ className ])}>
-            <ProfilePageHeader />
             {data?.avatar && (
                 <HStack justify="center" max className={cls.avatarWrapper}>
                     <Avatar src={data?.avatar} />
