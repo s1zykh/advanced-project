@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername/ui/LoginfModal/LoginModal';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
@@ -21,6 +23,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
 
     const dispatch = useDispatch();
+
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
+    const isAdminPanelAvailable = isAdmin || isManager;
 
     const [ isAuthModal, setIsAuthModal ] = useState(false);
 
@@ -57,8 +63,13 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     direction="bottom left"
                     className={cls.dropdown}
                     items={[
-                        {
+                        ...(isAdminPanelAvailable ? [ {
                             itemId: 1,
+                            content: t('Админ'),
+                            href: RoutePath.admin_panel,
+                        } ] : []),
+                        {
+                            itemId: 2,
                             content: t('Профиль'),
                             href: RoutePath.profile + authData.id,
                         },
