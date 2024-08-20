@@ -6,9 +6,9 @@ function AboutPage() {
     const { t } = useTranslation('about');
 
     return (
-        <Page>
+        <div>
             {t('О сайте')}
-        </Page>
+        </div>
     );
 }
 

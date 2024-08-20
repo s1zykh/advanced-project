@@ -35,11 +35,7 @@ decorators: [StoreDecorator({
 }
 
 export const Dark: Story = {
-    decorators: [(Story) => (
-        <div className={`app ${Theme.DARK}`}>
-            <Story />
-        </div>
-    ), StoreDecorator({
+    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
         profile: {
             form: {
                 username: 'admin',

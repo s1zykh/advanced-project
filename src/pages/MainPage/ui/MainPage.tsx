@@ -6,9 +6,9 @@ function MainPage() {
     const { t } = useTranslation();
 
     return (
-        <Page>
+        <div>
             {t('Главная страница')}
-        </Page>
+        </div>
     );
 }
 
