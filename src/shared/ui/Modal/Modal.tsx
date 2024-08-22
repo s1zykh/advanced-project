@@ -3,9 +3,11 @@ import React, {
     ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
 
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
 
 interface ModalProps {
     className?: string;
@@ -28,6 +30,7 @@ export function Modal(props: ModalProps) {
     const [ isMonted, setIsMonted ] = useState(false);
 
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const { theme } = useTheme();
 
     const mods: Mods = {
         [cls.opened]: isOpen,
@@ -76,14 +79,14 @@ export function Modal(props: ModalProps) {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [ className ])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+            <div className={classNames(cls.Modal, mods, [ className, theme, 'app_modal' ])}>
+                <Overlay onClick={closeHandler} />
+                <div
+                    className={cls.content}
+                >
+                    {children}
                 </div>
             </div>
         </Portal>
-
     );
 }
