@@ -8,7 +8,7 @@ import { CurrencySelect, Currency } from 'entities/Currency';
 import { CountrySelect, Country } from 'entities/Country';
 import { HStack, VStack } from 'shared/ui/Stack';
 
-import { Profile } from '../../model/types/profile';
+import type { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {

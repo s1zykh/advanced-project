@@ -2,8 +2,9 @@ import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 
-import { BuildOptions } from './types/config';
+import type { BuildOptions } from './types/config';
 
 export function buildPlugins({
     paths,
@@ -23,6 +24,10 @@ export function buildPlugins({
         __IS_DEV__: JSON.stringify(isDev),
         __API__: JSON.stringify(apiUrl),
         __PROJECT__: JSON.stringify(project),
+    }),
+    new CircularDependencyPlugin({
+        exclude: /node_modules/,
+        failOnError: true,
     }),
     ];
     if (isDev) {

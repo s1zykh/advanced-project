@@ -8,7 +8,7 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { VStack } from 'shared/ui/Stack';
 
 import cls from './CommentCard.module.scss';
-import { Comment } from '../../model/types/comment';
+import type { Comment } from '../../model/types/comment';
 
 interface CommentCardProps {
     className?: string;

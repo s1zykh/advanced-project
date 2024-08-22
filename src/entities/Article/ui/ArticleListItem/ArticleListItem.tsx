@@ -11,9 +11,10 @@ import { Icon } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 
-import {
-    Article, ArticleView, ArticleBlockType, ArticleTextBlock,
+import type {
+    Article, ArticleTextBlock,
 } from '../../model/types/article';
+import { ArticleView, ArticleBlockType } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 

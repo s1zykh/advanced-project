@@ -1,8 +1,9 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
-import { StoreProvider } from '../../src/app/providers/StoreProvider';
-import { Theme, ThemeProvider } from '../../src/app/providers/ThemeProvider';
+import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
+import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
+import { Theme } from '../../src/app/providers/ThemeProvider';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
@@ -12,18 +13,7 @@ const preview: Preview = {
             date: /Date$/,
         },
     },
-    decorators: [ (Story, { parameters }) => (
-        <ThemeProvider>
-            <div className={`app ${Theme.LIGHT}`}>
-                <Story />
-            </div>
-        </ThemeProvider>
-
-    ), (Story) => (
-        <BrowserRouter>
-            <Story />
-        </BrowserRouter>
-    ) ],
+    decorators: [ SuspenseDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator ],
 };
 
 export default preview;

@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { Suspense, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entities/Comment';
@@ -15,7 +15,7 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
@@ -43,7 +43,11 @@ export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
                 size={TextSize.L}
                 title={t('Комментарии')}
             />
-            <AddCommentForm onSendComment={onSendComment} />
+
+            <Suspense fallback="Идет загрузка">
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
+
             <CommentList
                 isLoading={commentsIsLoading}
                 comments={comments}

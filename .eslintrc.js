@@ -76,6 +76,7 @@ module.exports = {
     "react/no-array-index-key": "off",
     "no-param-reassign": "off",
     "default-param-last": "off",
+    "no-nested-ternary": "off",
     "import/no-extraneous-dependencies": "off",
     "import/order": [
       2,
