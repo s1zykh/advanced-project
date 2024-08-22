@@ -23,7 +23,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
-    }, [dispatch]);
+    }, [ dispatch ]);
 
     const isAdminPanelAvailable = isAdmin || isManager;
 
@@ -34,12 +34,12 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     return (
         <Dropdown
             direction="bottom left"
-            className={classNames('', {}, [className])}
+            className={classNames('', {}, [ className ])}
             items={[
-                ...(isAdminPanelAvailable ? [{
+                ...(isAdminPanelAvailable ? [ {
                     content: t('Админка'),
                     href: RoutePath.admin_panel,
-                }] : []),
+                } ] : []),
                 {
                     content: t('Профиль'),
                     href: RoutePath.profile + authData.id,

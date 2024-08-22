@@ -2,6 +2,7 @@ import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
+
 import { AppLink } from '../../../AppLink/AppLink';
 import cls from './Dropdown.module.scss';
 import { mapDirectionClass } from '../../styles/consts';
@@ -26,10 +27,10 @@ export function Dropdown(props: DropdownProps) {
         className, trigger, items, direction = 'bottom right',
     } = props;
 
-    const menuClasses = [mapDirectionClass[direction]];
+    const menuClasses = [ mapDirectionClass[direction] ];
 
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
+        <Menu as="div" className={classNames(cls.Dropdown, {}, [ className, popupCls.popup ])}>
             <Menu.Button className={popupCls.trigger}>
                 {trigger}
             </Menu.Button>

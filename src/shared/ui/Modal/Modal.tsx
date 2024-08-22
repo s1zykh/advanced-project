@@ -4,6 +4,7 @@ import React, {
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { useModal } from 'shared/lib/hooks/useModal/useModal';
 
 import cls from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -17,7 +18,9 @@ interface ModalProps {
     lazy?: boolean
 }
 
-export function Modal(props: ModalProps) {
+const ANIMATION_DELAY = 300;
+
+export const Modal = (props: ModalProps) => {
     const {
         className,
         children,
@@ -26,61 +29,31 @@ export function Modal(props: ModalProps) {
         lazy,
     } = props;
 
-    const [ isClosing, setIsClosing ] = useState(false);
-    const [ isMonted, setIsMonted ] = useState(false);
+    const {
+        close,
+        isClosing,
+        isMounted,
+    } = useModal({
+        animationDelay: ANIMATION_DELAY,
+        onClose,
+        isOpen,
+    });
 
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
     const mods: Mods = {
         [cls.opened]: isOpen,
-        [cls.isClosed]: isClosing,
+        [cls.isClosing]: isClosing,
     };
 
-    useEffect(() => {
-        if (isOpen) {
-            setIsMonted(true);
-        }
-    }, [ isOpen ]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timerRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, 300);
-        }
-    }, [ onClose ]);
-
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [ closeHandler ]);
-
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
-
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-        return () => {
-            clearTimeout(timerRef.current);
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [ isOpen, onKeyDown ]);
-
-    if (lazy && !isMonted) {
+    if (lazy && !isMounted) {
         return null;
     }
 
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [ className, theme, 'app_modal' ])}>
-                <Overlay onClick={closeHandler} />
+                <Overlay onClick={close} />
                 <div
                     className={cls.content}
                 >
@@ -89,4 +62,4 @@ export function Modal(props: ModalProps) {
             </div>
         </Portal>
     );
-}
+};
