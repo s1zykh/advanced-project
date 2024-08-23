@@ -1,11 +1,6 @@
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { Page } from 'widgets/Page/Page';
 
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
@@ -20,6 +15,12 @@ import {
 }
     from '../../model/selectors/articlesPageSelectors';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+
+import { Page } from '@/widgets/Page/Page';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticlesPageProps {
     className?: string;

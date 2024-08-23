@@ -1,7 +1,7 @@
 import React from 'react';
-import { CurrencySelect } from 'entities/Currency';
+import { CurrencySelect } from '@/entities/Currency';
 
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

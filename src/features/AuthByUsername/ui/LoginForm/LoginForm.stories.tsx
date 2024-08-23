@@ -1,7 +1,7 @@
 
 import React from 'react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import 'app/styles/index.scss';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import '@/app/styles/index.scss';
 
 import type { Meta, StoryObj } from '@storybook/react';
 import  LoginForm from './LoginForm';

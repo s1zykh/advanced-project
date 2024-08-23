@@ -1,10 +1,10 @@
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
 import React from 'react';
 
 import { NotFoundPage } from './NotFoundPage';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 const meta: Meta<typeof NotFoundPage> = {
     title: 'pages/NotFoundPage',

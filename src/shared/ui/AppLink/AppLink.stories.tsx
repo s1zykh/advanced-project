@@ -1,9 +1,9 @@
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
 import React from 'react';
 
 import { AppLinkTheme, AppLink } from './AppLink';
 
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

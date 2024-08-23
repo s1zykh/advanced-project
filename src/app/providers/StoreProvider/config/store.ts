@@ -2,13 +2,14 @@ import { CombinedState, Reducer } from 'redux';
 import {
     ReducersMapObject, configureStore,
 } from '@reduxjs/toolkit';
-import { userReducer } from 'entities/User';
-import { $api } from 'shared/api/api';
-import { uiReducer } from 'features/UI';
-import { rtkApi } from 'shared/api/rtlApi';
 
 import { ThunkExtraArg, StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
+
+import { userReducer } from '@/entities/User';
+import { $api } from '@/shared/api/api';
+import { uiReducer } from '@/features/UI';
+import { rtkApi } from '@/shared/api/rtlApi';
 
 export function createReduxStore(
     initialState?: StateSchema,

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Select } from 'shared/ui/Select/Select';
+import { Select } from '@/shared/ui/Select/Select';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

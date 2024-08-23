@@ -2,9 +2,9 @@
 import React from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import 'app/styles/index.scss';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
-import { Theme } from 'app/providers/ThemeProvider';
+import '@/app/styles/index.scss';
+import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Theme } from '@/app/providers/ThemeProvider';
 
 
 const meta: Meta<typeof Text> = {

@@ -1,9 +1,9 @@
-import { Theme } from 'app/providers/ThemeProvider';
+import { Theme } from '@/app/providers/ThemeProvider';
 import React from 'react';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
 import { Navbar } from './Navbar';
 
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

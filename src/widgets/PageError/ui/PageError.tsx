@@ -1,9 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button/Button';
 import React from 'react';
 
 import cls from './ErrorPage.module.scss';
+
+import { Button } from '@/shared/ui/Button/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface PageErrorProps {
   className?: string;
