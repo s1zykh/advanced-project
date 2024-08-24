@@ -40,6 +40,10 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "warn",
     "react/jsx-no-useless-fragment": "warn",
     "s1zykh-test-plugin/path-checker": ["error", {alias: '@'}],
+    "s1zykh-test-plugin/public-api-imports": ["error", {
+      alias: '@',
+      testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+    }],
     "no-undef": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "no-unused-vars": "warn",

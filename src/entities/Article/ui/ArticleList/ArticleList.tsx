@@ -11,7 +11,7 @@ import cls from './ArticleList.module.scss';
 import { ArticleView } from '../../model/types/article';
 import type { Article } from '../../model/types/article';
 
-import { PAGE_ID } from '@/widgets/Page/Page';
+import { PAGE_ID } from '@/widgets/Page';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 

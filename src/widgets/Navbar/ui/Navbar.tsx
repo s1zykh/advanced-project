@@ -6,7 +6,7 @@ import cls from './Navbar.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { LoginModal } from '@/features/AuthByUsername/ui/LoginfModal/LoginModal';
+import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';

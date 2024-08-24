@@ -11,7 +11,7 @@ import type{ LoginSchema } from '@/features/AuthByUsername';
 import type { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import type{ AddCommentFormSchema } from '@/features/addCommentForm';
 import type { ArticlesPageSchema } from '@/pages/ArticlesPage';
-import type { UISchema } from '@/features/UI/model/types/UISchema';
+import type { UISchema } from '@/features/UI';
 
 import { rtkApi } from '@/shared/api/rtlApi';
 
