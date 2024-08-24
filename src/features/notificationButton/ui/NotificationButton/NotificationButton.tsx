@@ -9,6 +9,7 @@ import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { NotificationList } from '@/entities/Notification';
 import { Popover } from '@/shared/ui/Popups';
 import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Button } from '@/shared/ui/Button/Button';
 
 interface NotificationButtonProps {
     className?: string;
@@ -27,9 +28,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     }, []);
 
     const trigger = (
-        <div onClick={onOpenDrawer}>
+        <Button onClick={onOpenDrawer}>
             <Icon Svg={NotificationIcon} inverted />
-        </div>
+        </Button>
     );
 
     return (

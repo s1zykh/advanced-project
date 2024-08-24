@@ -2,13 +2,8 @@
     min-height: 100%;
 }
 
-
-.commentPage {
-    margin-top: 20px;
-}
-
 .recommendations {
-    margin-top: 20px;
     flex-wrap: nowrap;
-    overflow: auto hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
 }
