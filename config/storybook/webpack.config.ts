@@ -12,6 +12,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
   };
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push("ts", "tsx");
+  config!.resolve!.alias = {
+    ...config!.resolve!.alias,
+    '@': paths.src,
+}; 
   if (config.module) {
     config.module.rules = config.module?.rules?.map((rule: any) => {//Обязательно исправлю, извините
       if (/svg/.test(rule.test as string)) {
