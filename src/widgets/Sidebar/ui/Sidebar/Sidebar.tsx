@@ -7,8 +7,8 @@ import cls from './Sidebar.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
-import { LangSwitcher } from '@/shared/ui/LangSwitcher/LangSwitcher';
-import { ThemeSwitcher } from '@/shared/ui/ThemeSwitcher';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 interface SidebarProps {

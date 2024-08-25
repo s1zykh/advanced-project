@@ -1,12 +1,13 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AppRouter } from '@/app/providers/router';
-import { useTheme } from '@/app/providers/ThemeProvider';
+import { AppRouter } from './providers/router';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { getUserInited, userActions } from '@/entities/User';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 function App() {
     const { theme } = useTheme();

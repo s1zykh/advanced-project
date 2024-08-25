@@ -3,7 +3,7 @@ import {
     HTMLAttributeAnchorTarget, memo, MutableRefObject, useEffect, useRef,
     useState,
 } from 'react';
-import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
+import { VirtuosoGrid } from 'react-virtuoso';
 
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -11,7 +11,6 @@ import cls from './ArticleList.module.scss';
 import { ArticleView } from '../../model/types/article';
 import type { Article } from '../../model/types/article';
 
-import { PAGE_ID } from '@/widgets/Page';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 

@@ -44,6 +44,13 @@ module.exports = {
       alias: '@',
       testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
     }],
+    "s1zykh-test-plugin/layer-imports": [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', "**/testing"],
+      }
+    ],
     "no-undef": "off",
     "@typescript-eslint/no-unused-vars": "warn",
     "no-unused-vars": "warn",
