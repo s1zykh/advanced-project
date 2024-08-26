@@ -4,6 +4,7 @@ import React from 'react';
 import { Button, ButtonTheme, ButtonSize } from './Button';
 import type { Meta, StoryObj } from '@storybook/react';
 import '@/app/styles/index.scss';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 const meta: Meta<typeof Button> = {
     title: 'shared/Button',
@@ -32,11 +33,7 @@ export const Outlined: Story = {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
     },
-    decorators: [ (Story) => (
-        <div className={`app ${Theme.DARK}`}>
-            <Story />
-        </div>
-    ) ],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const OutlineSizeL: Story = {
@@ -59,11 +56,7 @@ export const OutlineDark : Story = {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
     },
-    decorators: [ (Story) => (
-        <div className={`app ${Theme.DARK}`}>
-            <Story />
-        </div>
-    ) ],
+    decorators: [ ThemeDecorator(Theme.DARK)],
 };
 
 export const BackgroundTheme : Story = {
