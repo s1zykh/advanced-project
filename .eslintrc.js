@@ -32,11 +32,13 @@ module.exports = {
     "import", 
     "i18next", 
     "react-hooks", 
-    "s1zykh-test-plugin"
+    "s1zykh-test-plugin",
+    "unused-imports"
   ],
   rules: {
     "no-console": "warn",
     "@typescript-eslint/ban-ts-comment": "warn",
+    "unused-imports/no-unused-imports": "error",
     "@typescript-eslint/no-explicit-any": "warn",
     "react/jsx-no-useless-fragment": "warn",
     "s1zykh-test-plugin/path-checker": ["error", {alias: '@'}],

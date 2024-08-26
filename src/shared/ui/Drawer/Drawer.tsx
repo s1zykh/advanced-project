@@ -5,7 +5,7 @@ import React, {
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 import { Portal } from '../Portal/Portal';
-import { classNames, Mods } from '../../lib/classNames/classNames';
+import { classNames } from '../../lib/classNames/classNames';
 
 import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';

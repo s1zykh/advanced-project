@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import {
-    HTMLAttributeAnchorTarget, memo, MutableRefObject, useEffect, useRef,
-    useState,
+    HTMLAttributeAnchorTarget, memo, useRef,
 } from 'react';
 import { VirtuosoGrid } from 'react-virtuoso';
 
