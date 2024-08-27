@@ -9,11 +9,11 @@ import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -37,11 +37,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <header className={classNames(cls.Navbar, {}, [ className ])}>
                 <Text
                     className={cls.appName}
-                    title={t('Ulbi TV App')}
+                    title={t('App')}
                     theme={TextTheme.INVERTED}
                 />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
                     className={cls.createBtn}
                 >
