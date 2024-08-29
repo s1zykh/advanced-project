@@ -11,8 +11,8 @@ import type { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommen
 import { Comment } from '@/entities/Comment';
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-const commentsAdapter = createEntityAdapter<Comment>({
-    selectId: (comment) => comment.id,
+const commentsAdapter = createEntityAdapter({
+    selectId: (comment: Comment) => comment.id,
 });
 
 export const getArticleComments = commentsAdapter

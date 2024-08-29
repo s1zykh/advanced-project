@@ -1,8 +1,7 @@
 import {
-    EnhancedStore, AnyAction, Reducer,
+    EnhancedStore, AnyAction, Reducer, CombinedState,
 } from '@reduxjs/toolkit';
 
-import type { CombinedState } from 'redux';
 import type { AxiosInstance } from 'axios';
 import type { ArticleDetailsSchema } from '@/entities/Article';
 import type { UserSchema } from '@/entities/User';

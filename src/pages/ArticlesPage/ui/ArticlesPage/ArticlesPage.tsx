@@ -9,12 +9,12 @@ import {
 }
     from '../../model/slices/articlesPageSlice';
 import cls from './ArticlesPage.module.scss';
-import { ArticlesPageFilters } from '../ArticlesPageFilter/ArticlesPageFilters';
 import {
     getArticlesPageView,
 }
     from '../../model/selectors/articlesPageSelectors';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlesPageFilters } from '../ArticlesPageFilter/ArticlesPageFilters';
 
 import { Page } from '@/widgets/Page';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';

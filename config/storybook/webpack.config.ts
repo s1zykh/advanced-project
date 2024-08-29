@@ -16,8 +16,24 @@ export default ({ config }: { config: webpack.Configuration }) => {
     ...config!.resolve!.alias,
     '@': paths.src,
 }; 
+config.module?.rules?.push({
+  test: /\.tsx?$/,
+  use: [
+    {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          '@babel/preset-env',
+          ['@babel/preset-react', { runtime: 'automatic' }],
+          '@babel/preset-typescript',
+        ],
+      },
+    },
+  ],
+  exclude: /node_modules/,
+});
   if (config.module) {
-    config.module.rules = config.module?.rules?.map((rule: any) => {//Обязательно исправлю, извините
+    config.module.rules = config.module?.rules?.map((rule: any) => {
       if (/svg/.test(rule.test as string)) {
         return {...rule, exclude: /\.svg$/}
       }

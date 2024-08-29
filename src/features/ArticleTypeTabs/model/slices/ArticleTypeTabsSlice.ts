@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import { ArticleTypeTabsSchema } from '../types/ArticleTypeTabsSchema';
 
 const initialState: ArticleTypeTabsSchema = {
-    
+
 };
 
 export const ArticleTypeTabsSlice = createSlice({
@@ -10,7 +11,7 @@ export const ArticleTypeTabsSlice = createSlice({
     initialState,
     reducers: {
         template: (state, action: PayloadAction<string>) => {
-           
+
         },
     },
     // extraReducers: (builder) => {

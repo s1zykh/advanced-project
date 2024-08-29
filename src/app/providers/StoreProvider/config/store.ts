@@ -1,6 +1,6 @@
-import { CombinedState, Reducer } from 'redux';
+import { Reducer } from 'redux';
 import {
-    ReducersMapObject, configureStore,
+    ReducersMapObject, configureStore, CombinedState,
 } from '@reduxjs/toolkit';
 
 import { ThunkExtraArg, StateSchema } from './StateSchema';

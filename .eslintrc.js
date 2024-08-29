@@ -76,6 +76,7 @@ module.exports = {
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "react/jsx-indent-props": [2, 4],
+    "@typescript-eslint/no-namespace": "off",
     "react/require-default-props": "off",
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
