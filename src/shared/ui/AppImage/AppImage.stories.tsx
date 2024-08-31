@@ -13,7 +13,5 @@ export default meta;
 type Story = StoryObj<typeof AppImage>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
+    args: {},
 };

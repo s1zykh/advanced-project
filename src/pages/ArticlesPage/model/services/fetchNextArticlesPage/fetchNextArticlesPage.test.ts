@@ -1,5 +1,5 @@
-import { fetchNextArticlesPage } from "./fetchNextArticlesPage";
+import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 
-describe("fetchNextArticlesPage.test", () => {
-    it.todo("should ")
-})
+describe('fetchNextArticlesPage.test', () => {
+    it.todo('should ');
+});

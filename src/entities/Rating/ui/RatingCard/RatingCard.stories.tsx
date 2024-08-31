@@ -13,7 +13,5 @@ export default meta;
 type Story = StoryObj<typeof RatingCard>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
+    args: {},
 };

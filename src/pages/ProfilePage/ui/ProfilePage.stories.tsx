@@ -19,33 +19,38 @@ export default meta;
 type Story = StoryObj<typeof ProfilePage>;
 
 export const Normal: Story = {
-decorators: [StoreDecorator({
-    profile: {
-        form: {
-            username: 'admin',
-            age: 22,
-            country: Country.Ukraine,
-            lastname: 'ulbi tv',
-            first: 'asd',
-            city: 'asf',
-            currency: Currency.USD,
-        },
-    },
-})]
-}
+    decorators: [
+        StoreDecorator({
+            profile: {
+                form: {
+                    username: 'admin',
+                    age: 22,
+                    country: Country.Ukraine,
+                    lastname: 'ulbi tv',
+                    first: 'asd',
+                    city: 'asf',
+                    currency: Currency.USD,
+                },
+            },
+        }),
+    ],
+};
 
 export const Dark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({
-        profile: {
-            form: {
-                username: 'admin',
-                age: 22,
-                country: Country.Ukraine,
-                lastname: 'ulbi tv',
-                first: 'asd',
-                city: 'asf',
-                currency: Currency.USD,
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({
+            profile: {
+                form: {
+                    username: 'admin',
+                    age: 22,
+                    country: Country.Ukraine,
+                    lastname: 'ulbi tv',
+                    first: 'asd',
+                    city: 'asf',
+                    currency: Currency.USD,
+                },
             },
-        },
-    })],
+        }),
+    ],
 };

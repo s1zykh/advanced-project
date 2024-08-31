@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import {
-    HTMLAttributeAnchorTarget, memo, useRef,
-} from 'react';
+import { HTMLAttributeAnchorTarget, memo, useRef } from 'react';
 import { VirtuosoGrid } from 'react-virtuoso';
 
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -15,18 +13,23 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleListProps {
     className?: string;
-    articles: Article[]
+    articles: Article[];
     isLoading?: boolean;
     target?: HTMLAttributeAnchorTarget;
     view?: ArticleView;
-    virtualized?: boolean
+    virtualized?: boolean;
 }
 
-const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
-    .fill(0)
-    .map((item, index) => (
-        <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
-    ));
+const getSkeletons = (view: ArticleView) =>
+    new Array(view === ArticleView.SMALL ? 9 : 3)
+        .fill(0)
+        .map((item, index) => (
+            <ArticleListItemSkeleton
+                className={cls.card}
+                key={index}
+                view={view}
+            />
+        ));
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
@@ -44,7 +47,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (!isLoading && !articles.length) {
         return (
-            <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])}>
+            <div
+                className={classNames(cls.ArticleList, {}, [
+                    className,
+                    cls[view],
+                ])}
+            >
                 <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         );
@@ -57,15 +65,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
             key={`str${index}`}
             className={cls.card}
         />
-
     );
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])} ref={containerRef} data-testid="ArticleList">
+        <div
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+            ref={containerRef}
+            data-testid="ArticleList"
+        >
             {isLoading ? (
-                <>
-                    {getSkeletons(view)}
-                </>
+                <>{getSkeletons(view)}</>
             ) : virtualized ? (
                 <VirtuosoGrid
                     data={articles}
@@ -80,7 +89,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             ) : (
                 articles.map((item) => rowRender(articles.indexOf(item), item))
             )}
-            { isLoading && getSkeletons(view)}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

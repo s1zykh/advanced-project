@@ -32,6 +32,6 @@ export const Normal: Story = {
 export const Loading: Story = {
     args: {
         comments: [],
-        isLoading: true
+        isLoading: true,
     },
 };

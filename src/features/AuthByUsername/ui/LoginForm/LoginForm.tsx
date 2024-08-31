@@ -15,11 +15,14 @@ import { Button } from '@/shared/ui/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 export interface LoginFormProps {
     className?: string;
-    onSuccess: () => void
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -36,24 +39,30 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
 
-    const onChangeUsername = useCallback((value: string) => {
-        dispacth(loginActions.setUsername(value));
-    }, [ dispacth ]);
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            dispacth(loginActions.setUsername(value));
+        },
+        [dispacth],
+    );
 
-    const onChangePassword = useCallback((value: string) => {
-        dispacth(loginActions.setPassword(value));
-    }, [ dispacth ]);
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispacth(loginActions.setPassword(value));
+        },
+        [dispacth],
+    );
 
     const onLoginClick = useCallback(async () => {
         const result = await dispacth(loginByUsername({ username, password }));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
-    }, [ dispacth, username, password, onSuccess ]);
+    }, [dispacth, username, password, onSuccess]);
 
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-            <div className={classNames(cls.LoginForm, {}, [ className ])}>
+            <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text title={t('Форма авторизации')} />
                 {error && <Text text={error} theme={TextTheme.ERROR} />}
                 <Input

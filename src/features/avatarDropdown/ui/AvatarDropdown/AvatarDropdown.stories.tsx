@@ -14,8 +14,6 @@ export default meta;
 type Story = StoryObj<typeof AvatarDropdown>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({})]
+    args: {},
+    decorators: [StoreDecorator({})],
 };

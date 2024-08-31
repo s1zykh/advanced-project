@@ -24,14 +24,22 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
             const hasRole = userRoles?.includes(requiredRole);
             return hasRole;
         });
-    }, [ roles, userRoles ]);
+    }, [roles, userRoles]);
 
     if (!auth) {
-        return <Navigate to={getRouteMain()} state={{ from: location }} replace />;
+        return (
+            <Navigate to={getRouteMain()} state={{ from: location }} replace />
+        );
     }
 
     if (!hasRequiredRoles) {
-        return <Navigate to={getRouteForbidden()} state={{ from: location }} replace />;
+        return (
+            <Navigate
+                to={getRouteForbidden()}
+                state={{ from: location }}
+                replace
+            />
+        );
     }
 
     return children;

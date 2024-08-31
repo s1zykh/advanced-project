@@ -1,9 +1,12 @@
 {
-  "extends": "stylelint-config-standard-scss",
-  "rules": {
-    "block-no-empty": [true, {
-      "severity": "warning"
-    }],
-    "selector-class-pattern": null
-  }
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+        "block-no-empty": [
+            true,
+            {
+                "severity": "warning"
+            }
+        ],
+        "selector-class-pattern": null
+    }
 }

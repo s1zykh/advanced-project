@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
@@ -30,6 +29,6 @@ export const Loading: Story = {
             text: 'hello world',
             user: { id: '1', username: 'Vasya' },
         },
-        isLoading: true
-    }
-}
+        isLoading: true,
+    },
+};

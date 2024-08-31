@@ -6,11 +6,7 @@ import { Page } from '@/widgets/Page';
 function MainPage() {
     const { t } = useTranslation();
 
-    return (
-        <Page data-testid="MainPage">
-            {t('Главная страница')}
-        </Page>
-    );
+    return <Page data-testid="MainPage">{t('Главная страница')}</Page>;
 }
 
 export default MainPage;

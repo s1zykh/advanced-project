@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
@@ -15,8 +14,6 @@ export default meta;
 type Story = StoryObj<typeof EditableProfileCardHeader>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({})]
+    args: {},
+    decorators: [StoreDecorator({})],
 };

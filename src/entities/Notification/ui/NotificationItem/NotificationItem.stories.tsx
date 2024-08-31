@@ -15,9 +15,9 @@ type Story = StoryObj<typeof NotificationItem>;
 export const Normal: Story = {
     args: {
         item: {
-            "id": "1",
-            "title": "Уведомление 1",
-            "description": "Произошло какое-то событие",
-          },
+            id: '1',
+            title: 'Уведомление 1',
+            description: 'Произошло какое-то событие',
+        },
     },
 };

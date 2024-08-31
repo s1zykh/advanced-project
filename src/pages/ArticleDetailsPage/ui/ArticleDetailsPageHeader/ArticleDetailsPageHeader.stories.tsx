@@ -14,9 +14,6 @@ export default meta;
 type Story = StoryObj<typeof ArticleDetailsPageHeader>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
-    decorators: [StoreDecorator({})]
+    args: {},
+    decorators: [StoreDecorator({})],
 };
-

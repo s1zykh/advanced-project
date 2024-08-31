@@ -13,7 +13,5 @@ export default meta;
 type Story = StoryObj<typeof ArticleTypeTabs>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
+    args: {},
 };

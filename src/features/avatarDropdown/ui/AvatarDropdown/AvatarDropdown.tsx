@@ -6,7 +6,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
 import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
@@ -24,7 +27,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
-    }, [ dispatch ]);
+    }, [dispatch]);
 
     const isAdminPanelAvailable = isAdmin || isManager;
 
@@ -35,12 +38,16 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     return (
         <Dropdown
             direction="bottom left"
-            className={classNames('', {}, [ className ])}
+            className={classNames('', {}, [className])}
             items={[
-                ...(isAdminPanelAvailable ? [ {
-                    content: t('Админка'),
-                    href: getRouteAdmin(),
-                } ] : []),
+                ...(isAdminPanelAvailable
+                    ? [
+                          {
+                              content: t('Админка'),
+                              href: getRouteAdmin(),
+                          },
+                      ]
+                    : []),
                 {
                     content: t('Профиль'),
                     href: getRouteProfile(authData.id),

@@ -4,7 +4,10 @@ import { Meta, StoryObj } from '@storybook/react';
 import { ArticleDetails } from './ArticleDetails';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from '@/entities/Article';
-import  { ArticleBlockType, ArticleType } from '@/entities/Article/model/types/article';
+import {
+    ArticleBlockType,
+    ArticleType,
+} from '@/entities/Article/model/types/article';
 
 const meta: Meta<typeof ArticleDetails> = {
     title: 'entities/ArticleDetails',
@@ -55,37 +58,35 @@ const article: Article = {
     ],
 };
 
-
-
 export const Normal: Story = {
-    args: {
-        
-    },
-    decorators:[StoreDecorator({
-        articleDetails: {
-            data: article,
-        },
-    })]
+    args: {},
+    decorators: [
+        StoreDecorator({
+            articleDetails: {
+                data: article,
+            },
+        }),
+    ],
 };
 
 export const Loading: Story = {
-    args: {
-        
-    },
-    decorators:[StoreDecorator({
-        articleDetails: {
-            isLoading: true,
-        },
-    })]
+    args: {},
+    decorators: [
+        StoreDecorator({
+            articleDetails: {
+                isLoading: true,
+            },
+        }),
+    ],
 };
 
 export const Error: Story = {
-    args: {
-        
-    },
-    decorators:[StoreDecorator({
-        articleDetails: {
-            error: "ERROR",
-        },
-    })]
+    args: {},
+    decorators: [
+        StoreDecorator({
+            articleDetails: {
+                error: 'ERROR',
+            },
+        }),
+    ],
 };

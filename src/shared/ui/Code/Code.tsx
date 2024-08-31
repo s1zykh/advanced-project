@@ -16,16 +16,18 @@ export const Code = memo((props: CodeProps) => {
 
     const onCopy = useCallback(() => {
         navigator.clipboard.writeText(text);
-    }, [ text ]);
+    }, [text]);
 
     return (
-        <pre className={classNames(cls.Code, {}, [ className ])}>
-            <Button onClick={onCopy} className={cls.copyBtn} theme={ButtonTheme.CLEAR}>
+        <pre className={classNames(cls.Code, {}, [className])}>
+            <Button
+                onClick={onCopy}
+                className={cls.copyBtn}
+                theme={ButtonTheme.CLEAR}
+            >
                 <CopyIcon className={cls.copyIcon} />
             </Button>
-            <code>
-                {text}
-            </code>
+            <code>{text}</code>
         </pre>
     );
 });

@@ -13,8 +13,5 @@ export default meta;
 type Story = StoryObj<typeof NotificationButton>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
+    args: {},
 };
-

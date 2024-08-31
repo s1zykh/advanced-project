@@ -17,12 +17,14 @@ if (!container) {
 }
 const root = createRoot(container);
 
-root.render(<BrowserRouter>
-    <StoreProvider>
-        <ErrorBoundary>
-            <ThemeProvider>
-                <App />
-            </ThemeProvider>
-        </ErrorBoundary>
-    </StoreProvider>
-</BrowserRouter>);
+root.render(
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>,
+);

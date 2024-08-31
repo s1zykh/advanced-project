@@ -11,7 +11,11 @@ const preview: Preview = {
             date: /Date$/,
         },
     },
-    decorators: [ SuspenseDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator ],
+    decorators: [
+        SuspenseDecorator,
+        ThemeDecorator(Theme.LIGHT),
+        RouterDecorator,
+    ],
 };
 
 export default preview;

@@ -12,16 +12,16 @@ const meta: Meta<typeof Avatar> = {
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
-export const Primary: Story =  {
+export const Primary: Story = {
     args: {
         size: 150,
         src: AvatarImg,
-    }
-}
+    },
+};
 
 export const Small: Story = {
     args: {
         size: 50,
         src: AvatarImg,
-    }
-}
+    },
+};

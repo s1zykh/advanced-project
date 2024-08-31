@@ -13,8 +13,6 @@ export default meta;
 type Story = StoryObj<typeof ArticlesPage>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
-    decorators:[StoreDecorator({})]
+    args: {},
+    decorators: [StoreDecorator({})],
 };

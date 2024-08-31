@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 
@@ -14,7 +13,5 @@ export default meta;
 type Story = StoryObj<typeof ArticleSortSelector>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
+    args: {},
 };

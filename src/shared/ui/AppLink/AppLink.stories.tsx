@@ -42,31 +42,37 @@ export const PrimaryDark: Story = {
         children: 'Text',
         theme: AppLinkTheme.PRIMARY,
     },
-    decorators: [ (Story) => (
-        <div className={`app ${Theme.DARK}`}>
-            <Story />
-        </div>
-    ) ],
+    decorators: [
+        (Story) => (
+            <div className={`app ${Theme.DARK}`}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 export const SecondaryDark: Story = {
     args: {
         children: 'Text',
         theme: AppLinkTheme.SECONDARY,
     },
-    decorators: [ (Story) => (
-        <div className={`app ${Theme.DARK}`}>
-            <Story />
-        </div>
-    ) ],
+    decorators: [
+        (Story) => (
+            <div className={`app ${Theme.DARK}`}>
+                <Story />
+            </div>
+        ),
+    ],
 };
 export const RedDark: Story = {
     args: {
         children: 'Text',
         theme: AppLinkTheme.RED,
     },
-    decorators: [ (Story) => (
-        <div className={`app ${Theme.DARK}`}>
-            <Story />
-        </div>
-    ) ],
+    decorators: [
+        (Story) => (
+            <div className={`app ${Theme.DARK}`}>
+                <Story />
+            </div>
+        ),
+    ],
 };

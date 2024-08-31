@@ -26,12 +26,7 @@ const article = {
         username: 'Ulbi tv',
         avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
-    type: [
-        'IT',
-        'SCIENCE',
-        'POLITICS',
-        'ECONOMICS',
-    ],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
     blocks: [
         {
             id: '1',
@@ -95,15 +90,15 @@ const article = {
 } as Article;
 
 export const Big: Story = {
-    args:{
+    args: {
         view: ArticleView.BIG,
         article,
-    }
-}
+    },
+};
 
 export const Small: Story = {
-    args:{
+    args: {
         view: ArticleView.SMALL,
         article,
-    }
-}
+    },
+};

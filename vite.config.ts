@@ -6,14 +6,12 @@ export default defineConfig({
     plugins: [
         svgr({
             include: '**/*.svg',
-            exclude: ""
+            exclude: '',
         }),
         react(),
     ],
     resolve: {
-        alias: [
-            { find: '@', replacement: '/src' },
-        ],
+        alias: [{ find: '@', replacement: '/src' }],
     },
     define: {
         __IS_DEV__: JSON.stringify(true),
@@ -21,4 +19,3 @@ export default defineConfig({
         __PROJECT__: JSON.stringify('frontend'),
     },
 });
- 

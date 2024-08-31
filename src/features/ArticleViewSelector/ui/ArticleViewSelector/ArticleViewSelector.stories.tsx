@@ -13,7 +13,5 @@ export default meta;
 type Story = StoryObj<typeof ArticleViewSelector>;
 
 export const Normal: Story = {
-    args: {
-        
-    },
+    args: {},
 };

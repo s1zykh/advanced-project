@@ -9,7 +9,6 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 const meta: Meta<typeof Button> = {
     title: 'shared/Button',
     component: Button,
-
 };
 
 export default meta;
@@ -43,7 +42,7 @@ export const OutlineSizeL: Story = {
         size: ButtonSize.L,
     },
 };
-export const OutlineSizeXl : Story = {
+export const OutlineSizeXl: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
@@ -51,15 +50,15 @@ export const OutlineSizeXl : Story = {
     },
 };
 
-export const OutlineDark : Story = {
+export const OutlineDark: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
     },
-    decorators: [ ThemeDecorator(Theme.DARK)],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
-export const BackgroundTheme : Story = {
+export const BackgroundTheme: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.BACKGROUND,
@@ -73,7 +72,7 @@ export const BackgroundInverted: Story = {
     },
 };
 
-export const Square : Story = {
+export const Square: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
@@ -81,7 +80,7 @@ export const Square : Story = {
     },
 };
 
-export const SquareSizeL : Story = {
+export const SquareSizeL: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
@@ -90,7 +89,7 @@ export const SquareSizeL : Story = {
     },
 };
 
-export const SquareSizeXl : Story = {
+export const SquareSizeXl: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
@@ -99,10 +98,10 @@ export const SquareSizeXl : Story = {
     },
 };
 
-export const Disabled : Story = {
+export const Disabled: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.OUTLINE,
-        disabled: true
+        disabled: true,
     },
 };
