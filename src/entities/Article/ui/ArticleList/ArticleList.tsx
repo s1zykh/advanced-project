@@ -61,7 +61,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     );
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])} ref={containerRef}>
+        <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])} ref={containerRef} data-testid="ArticleList">
             {isLoading ? (
                 <>
                     {getSkeletons(view)}
