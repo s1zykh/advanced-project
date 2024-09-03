@@ -41,9 +41,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     );
 
     if (view === ArticleView.BIG) {
-        const textBlock = article.blocks.find(
-            (block) => block.type === ArticleBlockType.TEXT,
-        ) as ArticleTextBlock;
+        const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT,) as ArticleTextBlock;
 
         return (
             <div

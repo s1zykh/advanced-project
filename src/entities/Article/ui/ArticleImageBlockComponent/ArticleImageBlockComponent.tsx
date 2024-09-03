@@ -12,8 +12,7 @@ interface ArticleImageBlockComponentProps {
     block: ArticleImageBlock;
 }
 
-export const ArticleImageBlockComponent = memo(
-    (props: ArticleImageBlockComponentProps) => {
+export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps) => {
         const { className, block } = props;
         const { t } = useTranslation();
 
@@ -29,5 +28,4 @@ export const ArticleImageBlockComponent = memo(
                 )}
             </div>
         );
-    },
-);
+    },);

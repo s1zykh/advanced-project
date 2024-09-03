@@ -15,8 +15,7 @@ interface ArticleDetailsPageHeaderProps {
     className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo(
-    (props: ArticleDetailsPageHeaderProps) => {
+export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
         const { className } = props;
         const { t } = useTranslation();
         const navigate = useNavigate();
@@ -49,5 +48,4 @@ export const ArticleDetailsPageHeader = memo(
                 )}
             </HStack>
         );
-    },
-);
+    },);

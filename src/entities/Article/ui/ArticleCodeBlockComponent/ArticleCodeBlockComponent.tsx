@@ -12,8 +12,7 @@ interface ArticleCodeBlockComponentProps {
     block: ArticleCodeBlock;
 }
 
-export const ArticleCodeBlockComponent = memo(
-    (props: ArticleCodeBlockComponentProps) => {
+export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
         const { className, block } = props;
         const { t } = useTranslation();
 
@@ -26,5 +25,4 @@ export const ArticleCodeBlockComponent = memo(
                 <Code text={block.code} />
             </div>
         );
-    },
-);
+    },);

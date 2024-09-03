@@ -28,8 +28,7 @@ export const Page = memo((props: PageProps) => {
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
     const scrollPosition = useSelector((state: StateSchema) =>
-        getUIScrollByPath(state, pathname),
-    );
+        getUIScrollByPath(state, pathname),);
 
     useInfiniteScroll({
         triggerRef,
@@ -42,12 +41,10 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(
-            uiActions.setScrollPosition({
+        dispatch(uiActions.setScrollPosition({
                 position: e.currentTarget.scrollTop,
                 path: pathname,
-            }),
-        );
+            }),);
     }, 500);
 
     return (

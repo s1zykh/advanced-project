@@ -14,21 +14,17 @@ const commentsAdapter = createEntityAdapter({
     selectId: (comment: Comment) => comment.id,
 });
 
-export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-    (state) =>
-        state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
-);
+export const getArticleComments = commentsAdapter.getSelectors<StateSchema>((state) =>
+        state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),);
 
 const articleDetailsCommentsSlice = createSlice({
     name: 'articleDetailsCommentsSlice',
-    initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>(
-        {
+    initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
             isLoading: false,
             error: undefined,
             ids: [],
             entities: {},
-        },
-    ),
+        },),
     reducers: {},
     extraReducers: (builder) => {
         builder

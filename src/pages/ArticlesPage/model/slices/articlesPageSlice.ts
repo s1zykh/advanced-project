@@ -21,9 +21,7 @@ const articlesAdapter = createEntityAdapter({
     selectId: (article: Article) => article.id,
 });
 
-export const getArticles = articlesAdapter.getSelectors<StateSchema>(
-    (state) => state.articlesPage || articlesAdapter.getInitialState(),
-);
+export const getArticles = articlesAdapter.getSelectors<StateSchema>((state) => state.articlesPage || articlesAdapter.getInitialState(),);
 
 const articlesPageSlice = createSlice({
     name: 'articlesPageSlice',
@@ -53,9 +51,7 @@ const articlesPageSlice = createSlice({
             state.page = action.payload;
         },
         initState: (state) => {
-            const view = localStorage.getItem(
-                ARTICLES_VIEW_LOCALSTORAGE_KEY,
-            ) as ArticleView;
+            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY,) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
             state._inited = true;

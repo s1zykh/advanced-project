@@ -11,23 +11,19 @@ const recommendationsAdapter = createEntityAdapter({
 });
 
 export const getArticleRecommendations =
-    recommendationsAdapter.getSelectors<StateSchema>(
-        (state) =>
+    recommendationsAdapter.getSelectors<StateSchema>((state) =>
             state.articleDetailsPage?.recommendations ||
-            recommendationsAdapter.getInitialState(),
-    );
+            recommendationsAdapter.getInitialState(),);
 
 const articleDetailsPageRecommendationsSlice = createSlice({
     name: 'articleDetailsPageRecommendationsSlice',
     initialState:
-        recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
-            {
+        recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>({
                 isLoading: false,
                 error: undefined,
                 ids: [],
                 entities: {},
-            },
-        ),
+            },),
     reducers: {},
     extraReducers: (builder) => {
         builder

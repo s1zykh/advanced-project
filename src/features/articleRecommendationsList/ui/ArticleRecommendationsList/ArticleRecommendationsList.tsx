@@ -12,8 +12,7 @@ interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommendationsList = memo(
-    (props: ArticleRecommendationsListProps) => {
+export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
         const { className } = props;
 
         const { t } = useTranslation();
@@ -41,5 +40,4 @@ export const ArticleRecommendationsList = memo(
                 />
             </VStack>
         );
-    },
-);
+    },);

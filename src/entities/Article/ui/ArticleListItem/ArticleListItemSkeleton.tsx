@@ -12,8 +12,7 @@ interface ArticleListItemSkeletonProps {
     view: ArticleView;
 }
 
-export const ArticleListItemSkeleton = memo(
-    (props: ArticleListItemSkeletonProps) => {
+export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
         const { className, view } = props;
 
         if (view === ArticleView.BIG) {
@@ -74,5 +73,4 @@ export const ArticleListItemSkeleton = memo(
                 </Card>
             </div>
         );
-    },
-);
+    },);

@@ -12,8 +12,7 @@ interface ArticleTextBlockComponentProps {
     block: ArticleTextBlock;
 }
 
-export const ArticleTextBlockComponent = memo(
-    (props: ArticleTextBlockComponentProps) => {
+export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
         const { className, block } = props;
         const { t } = useTranslation();
 
@@ -35,5 +34,4 @@ export const ArticleTextBlockComponent = memo(
                 ))}
             </div>
         );
-    },
-);
+    },);

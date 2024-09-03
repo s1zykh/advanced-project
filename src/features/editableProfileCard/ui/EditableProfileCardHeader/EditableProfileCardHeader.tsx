@@ -18,8 +18,7 @@ interface EditableProfileCardHeaderProps {
     className?: string;
 }
 
-export const EditableProfileCardHeader = memo(
-    (props: EditableProfileCardHeaderProps) => {
+export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
         const { className } = props;
 
         const { t } = useTranslation('profile');
@@ -80,5 +79,4 @@ export const EditableProfileCardHeader = memo(
                 )}
             </HStack>
         );
-    },
-);
+    },);
