@@ -115,7 +115,6 @@ module.exports = {
                 'newlines-between': 'always',
             },
         ],
-        'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': [
             1,
