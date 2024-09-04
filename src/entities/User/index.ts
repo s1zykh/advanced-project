@@ -7,6 +7,7 @@ import {
     isUserManager,
     getUserRoles,
 } from './model/selectors/getRoleSelectors';
+import { useJsonSettings } from './model/selectors/jsonSettings';
 
 export {
     userReducer,
@@ -19,4 +20,7 @@ export {
     isUserAdmin,
     getUserRoles,
     isUserManager,
+    useJsonSettings,
 };
+export { saveJsonSettings } from './model/services/saveJsonSettings';
+export { initAuthData } from './model/services/initAuthData';

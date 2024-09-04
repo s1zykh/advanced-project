@@ -1,3 +1,5 @@
+const { off } = require('process');
+
 const allTsExtensionsArray = ['ts', 'tsx', 'mtsx'];
 const allJsExtensionsArray = ['js', 'jsx', 'mjsx'];
 const allExtensions = [...allTsExtensionsArray, ...allJsExtensionsArray].join(
@@ -85,6 +87,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'react/jsx-props-no-spreading': 'warn',
+        'function-paren-newline': 'off',
         'react/function-component-definition': 'off',
         'import/no-unresolved': 'off',
         'react/jsx-closing-tag-location': 'off',
