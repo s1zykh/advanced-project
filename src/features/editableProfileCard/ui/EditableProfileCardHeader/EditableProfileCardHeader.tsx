@@ -8,9 +8,9 @@ import { getProfileData } from '../../model/selectors/getProfileData/getProfileD
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { HStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text/Text';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
@@ -18,7 +18,8 @@ interface EditableProfileCardHeaderProps {
     className?: string;
 }
 
-export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
+export const EditableProfileCardHeader = memo(
+    (props: EditableProfileCardHeaderProps) => {
         const { className } = props;
 
         const { t } = useTranslation('profile');
@@ -79,4 +80,5 @@ export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderP
                 )}
             </HStack>
         );
-    },);
+    },
+);

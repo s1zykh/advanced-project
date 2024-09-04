@@ -8,16 +8,16 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import cls from './ArticleListItem.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/Card/Card';
-import { Text } from '@/shared/ui/Text/Text';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Card } from '@/shared/ui/deprecated/Card/Card';
+import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { AppLink } from '@/shared/ui/deprecated/AppLink/AppLink';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton';
 
 interface ArticleListItemProps {
     className?: string;
@@ -41,7 +41,9 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     );
 
     if (view === ArticleView.BIG) {
-        const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT,) as ArticleTextBlock;
+        const textBlock = article.blocks.find(
+            (block) => block.type === ArticleBlockType.TEXT,
+        ) as ArticleTextBlock;
 
         return (
             <div

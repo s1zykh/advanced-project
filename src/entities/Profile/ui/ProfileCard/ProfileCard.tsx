@@ -4,13 +4,13 @@ import type { Profile } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import { Text, TextTheme, TextAlign } from '@/shared/ui/Text/Text';
-import { Input } from '@/shared/ui/Input/Input';
-import { Loader } from '@/shared/ui/Loader/Loader';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Text, TextTheme, TextAlign } from '@/shared/ui/deprecated/Text/Text';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
+import { Loader } from '@/shared/ui/deprecated/Loader/Loader';
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
 import { CurrencySelect, Currency } from '@/entities/Currency';
 import { CountrySelect, Country } from '@/entities/Country';
-import { HStack, VStack } from '@/shared/ui/Stack';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 
 interface ProfileCardProps {
     className?: string;

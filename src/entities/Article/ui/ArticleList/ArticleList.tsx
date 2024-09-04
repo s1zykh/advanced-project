@@ -8,7 +8,7 @@ import cls from './ArticleList.module.scss';
 import { ArticleView } from '../../model/types/article';
 import type { Article } from '../../model/types/article';
 
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleListProps {

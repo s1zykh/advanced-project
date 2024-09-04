@@ -4,12 +4,12 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import cls from './NotificationButton.module.scss';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/deprecated/Icon/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';
 import { NotificationList } from '@/entities/Notification';
-import { Popover } from '@/shared/ui/Popups';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
-import { Button } from '@/shared/ui/Button/Button';
+import { Popover } from '@/shared/ui/deprecated/Popups';
+import { Drawer } from '@/shared/ui/deprecated/Drawer/Drawer';
+import { Button } from '@/shared/ui/deprecated/Button/Button';
 
 interface NotificationButtonProps {
     className?: string;

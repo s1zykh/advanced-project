@@ -3,7 +3,7 @@ import React from 'react';
 
 import cls from './ErrorPage.module.scss';
 
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/deprecated/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface PageErrorProps {

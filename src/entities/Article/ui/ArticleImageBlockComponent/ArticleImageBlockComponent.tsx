@@ -4,7 +4,7 @@ import { memo } from 'react';
 import cls from './ArticleImageBlockComponent.module.scss';
 import { ArticleImageBlock } from '../../model/types/article';
 
-import { Text, TextAlign } from '@/shared/ui/Text/Text';
+import { Text, TextAlign } from '@/shared/ui/deprecated/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleImageBlockComponentProps {
@@ -12,7 +12,8 @@ interface ArticleImageBlockComponentProps {
     block: ArticleImageBlock;
 }
 
-export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponentProps) => {
+export const ArticleImageBlockComponent = memo(
+    (props: ArticleImageBlockComponentProps) => {
         const { className, block } = props;
         const { t } = useTranslation();
 
@@ -28,4 +29,5 @@ export const ArticleImageBlockComponent = memo((props: ArticleImageBlockComponen
                 )}
             </div>
         );
-    },);
+    },
+);

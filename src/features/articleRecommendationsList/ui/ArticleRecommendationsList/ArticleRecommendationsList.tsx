@@ -5,14 +5,15 @@ import { useArticleRecommendationsList } from '../../api/articleRecommendationsA
 
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList } from '@/entities/Article';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { VStack } from '@/shared/ui/Stack';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text/Text';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 
 interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
+export const ArticleRecommendationsList = memo(
+    (props: ArticleRecommendationsListProps) => {
         const { className } = props;
 
         const { t } = useTranslation();
@@ -40,4 +41,5 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
                 />
             </VStack>
         );
-    },);
+    },
+);

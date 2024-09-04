@@ -10,11 +10,11 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import cls from './LoginForm.module.scss';
 
-import { Input } from '@/shared/ui/Input/Input';
-import { Button } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/deprecated/Input/Input';
+import { Button } from '@/shared/ui/deprecated/Button/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/deprecated/Text/Text';
 import {
     DynamicModuleLoader,
     ReducersList,

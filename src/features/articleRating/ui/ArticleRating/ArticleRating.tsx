@@ -9,7 +9,7 @@ import {
 
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton';
 
 export interface ArticleRatingProps {
     className?: string;
@@ -70,7 +70,9 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
             rate={rating?.rate}
             className={className}
             title={t('Оцените статью')}
-            feedbackTitle={t('Оставьте свой отзыв о статье, это поможет улучшить качество',)}
+            feedbackTitle={t(
+                'Оставьте свой отзыв о статье, это поможет улучшить качество',
+            )}
             hasFeedback
         />
     );

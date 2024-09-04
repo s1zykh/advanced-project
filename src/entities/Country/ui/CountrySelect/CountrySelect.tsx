@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 
 import { Country } from '../../model/types/country';
 
-import { ListBox } from '@/shared/ui/Popups';
+import { ListBox } from '@/shared/ui/deprecated/Popups';
 
 interface CountrySelectProps {
     className?: string;
@@ -20,7 +20,8 @@ const options = [
     { value: Country.Ukraine, content: Country.Ukraine },
 ];
 
-export const CountrySelect = memo(({ className, value, onChange, readonly }: CountrySelectProps) => {
+export const CountrySelect = memo(
+    ({ className, value, onChange, readonly }: CountrySelectProps) => {
         const { t } = useTranslation();
 
         const onChangeHandler = useCallback(
@@ -41,4 +42,5 @@ export const CountrySelect = memo(({ className, value, onChange, readonly }: Cou
                 direction="top right"
             />
         );
-    },);
+    },
+);

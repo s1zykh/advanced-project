@@ -5,8 +5,8 @@ import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
-import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 
 interface CommentListProps {
     className?: string;

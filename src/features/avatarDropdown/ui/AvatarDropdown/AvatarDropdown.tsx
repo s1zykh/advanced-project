@@ -3,8 +3,8 @@ import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Dropdown } from '@/shared/ui/Popups';
+import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
+import { Dropdown } from '@/shared/ui/deprecated/Popups';
 import {
     getUserAuthData,
     isUserAdmin,

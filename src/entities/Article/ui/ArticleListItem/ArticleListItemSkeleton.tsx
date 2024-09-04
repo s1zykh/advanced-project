@@ -4,15 +4,16 @@ import cls from './ArticleListItem.module.scss';
 import { ArticleView } from '../../model/types/article';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Card } from '@/shared/ui/Card/Card';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Card } from '@/shared/ui/deprecated/Card/Card';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton/Skeleton';
 
 interface ArticleListItemSkeletonProps {
     className?: string;
     view: ArticleView;
 }
 
-export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
+export const ArticleListItemSkeleton = memo(
+    (props: ArticleListItemSkeletonProps) => {
         const { className, view } = props;
 
         if (view === ArticleView.BIG) {
@@ -73,4 +74,5 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
                 </Card>
             </div>
         );
-    },);
+    },
+);

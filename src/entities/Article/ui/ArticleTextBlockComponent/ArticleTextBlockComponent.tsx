@@ -4,7 +4,7 @@ import { memo } from 'react';
 import cls from './ArticleTextBlockComponent.module.scss';
 import type { ArticleTextBlock } from '../../model/types/article';
 
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/deprecated/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleTextBlockComponentProps {
@@ -12,7 +12,8 @@ interface ArticleTextBlockComponentProps {
     block: ArticleTextBlock;
 }
 
-export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentProps) => {
+export const ArticleTextBlockComponent = memo(
+    (props: ArticleTextBlockComponentProps) => {
         const { className, block } = props;
         const { t } = useTranslation();
 
@@ -34,4 +35,5 @@ export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentP
                 ))}
             </div>
         );
-    },);
+    },
+);
