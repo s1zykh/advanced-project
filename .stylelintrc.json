@@ -7,6 +7,9 @@
                 "severity": "warning"
             }
         ],
-        "selector-class-pattern": null
+        "selector-class-pattern": null,
+        "comment-no-empty": null,
+        "no-invalid-position-at-import-rule": null,
+        "no-descending-specificity": null
     }
 }

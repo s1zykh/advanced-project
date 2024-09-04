@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 
 import loginReducer, { loginActions } from '../../model/slice/loginSlice';
-import loginByUsername from '../../model/services/loginByUsername/loginByUsername';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';

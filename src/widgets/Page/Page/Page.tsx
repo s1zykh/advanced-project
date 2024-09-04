@@ -12,6 +12,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -28,7 +29,8 @@ export const Page = memo((props: PageProps) => {
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
     const scrollPosition = useSelector((state: StateSchema) =>
-        getUIScrollByPath(state, pathname),);
+        getUIScrollByPath(state, pathname),
+    );
 
     useInfiniteScroll({
         triggerRef,
@@ -41,19 +43,29 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(uiActions.setScrollPosition({
+        dispatch(
+            uiActions.setScrollPosition({
                 position: e.currentTarget.scrollTop,
                 path: pathname,
-            }),);
+            }),
+        );
     }, 500);
 
     return (
         <main
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.PageRedesigned,
+                    off: () => cls.Page,
+                }),
+                {},
+                [className],
+            )}
             onScroll={onScroll}
             id={PAGE_ID}
-            data-testid={props['data-testid'] ?? 'page'}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onScrollEnd ? (
