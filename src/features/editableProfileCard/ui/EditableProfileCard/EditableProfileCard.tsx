@@ -12,7 +12,7 @@ import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 
-import { VStack } from '@/shared/ui/deprecated/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import {
     DynamicModuleLoader,
     ReducersList,

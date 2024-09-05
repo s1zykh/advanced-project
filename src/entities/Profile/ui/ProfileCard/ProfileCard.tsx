@@ -10,7 +10,7 @@ import { Loader } from '@/shared/ui/deprecated/Loader/Loader';
 import { Avatar } from '@/shared/ui/deprecated/Avatar/Avatar';
 import { CurrencySelect, Currency } from '@/entities/Currency';
 import { CountrySelect, Country } from '@/entities/Country';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 
 interface ProfileCardProps {
     className?: string;
