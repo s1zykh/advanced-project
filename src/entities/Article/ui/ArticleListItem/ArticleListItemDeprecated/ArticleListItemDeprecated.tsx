@@ -1,24 +1,27 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
+
 import cls from '../ArticleListItem.module.scss';
-import { Text } from '@/shared/ui/deprecated/Text';
-import { Icon } from '@/shared/ui/deprecated/Icon';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { ArticleTextBlock } from '../../../model/types/article';
 import {
     ArticleView,
     ArticleBlockType,
 } from '../../../model/consts/articleConsts';
+import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleListItemProps } from '../ArticleListItem';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { ArticleListItemProps } from '../ArticleListItem';
+
 
 export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
     const { className, article, view, target } = props;
