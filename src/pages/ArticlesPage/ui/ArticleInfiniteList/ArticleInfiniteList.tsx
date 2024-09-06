@@ -10,7 +10,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 
 import { ArticleList } from '@/entities/Article';
-import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
     className?: string;
@@ -34,7 +34,6 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
             view={view}
             articles={articles}
             className={className}
-            virtualized={false}
         />
     );
 });

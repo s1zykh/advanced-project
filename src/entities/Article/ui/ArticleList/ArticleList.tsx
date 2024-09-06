@@ -1,14 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { HTMLAttributeAnchorTarget, memo, useRef } from 'react';
-import { VirtuosoGrid } from 'react-virtuoso';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 
+import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
-import { ArticleView } from '../../model/types/article';
-import type { Article } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 
-import { Text, TextSize } from '@/shared/ui/deprecated/Text/Text';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ArticleListProps {
@@ -17,7 +16,6 @@ interface ArticleListProps {
     isLoading?: boolean;
     target?: HTMLAttributeAnchorTarget;
     view?: ArticleView;
-    virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -38,12 +36,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.SMALL,
         isLoading,
         target,
-        virtualized = true,
     } = props;
-
     const { t } = useTranslation();
-
-    const containerRef = useRef<HTMLDivElement | null>(null);
 
     if (!isLoading && !articles.length) {
         return (
@@ -57,38 +51,21 @@ export const ArticleList = memo((props: ArticleListProps) => {
             </div>
         );
     }
-    const rowRender = (index: number, article: Article) => (
-        <ArticleListItem
-            article={article}
-            view={view}
-            target={target}
-            key={`str${index}`}
-            className={cls.card}
-        />
-    );
 
     return (
         <div
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-            ref={containerRef}
             data-testid="ArticleList"
         >
-            {isLoading ? (
-                <>{getSkeletons(view)}</>
-            ) : virtualized ? (
-                <VirtuosoGrid
-                    data={articles}
-                    totalCount={articles.length}
-                    itemContent={rowRender}
-                    style={{ height: '700px', width: '100%' }}
-                    useWindowScroll
-                    className={cls.virtuosoList}
-                    customScrollParent={containerRef.current ?? undefined}
-                    listClassName={cls.articles_grid}
+            {articles.map((item) => (
+                <ArticleListItem
+                    article={item}
+                    view={view}
+                    target={target}
+                    key={item.id}
+                    className={cls.card}
                 />
-            ) : (
-                articles.map((item) => rowRender(articles.indexOf(item), item))
-            )}
+            ))}
             {isLoading && getSkeletons(view)}
         </div>
     );
