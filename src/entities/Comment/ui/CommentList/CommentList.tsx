@@ -5,8 +5,10 @@ import { CommentCard } from '../CommentCard/CommentCard';
 import { Comment } from '../../model/types/comment';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text/Text';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface CommentListProps {
     className?: string;
@@ -27,6 +29,7 @@ export const CommentList = memo((props: CommentListProps) => {
             </VStack>
         );
     }
+
     return (
         <VStack gap="16" max className={classNames('', {}, [className])}>
             {comments?.length ? (
@@ -38,7 +41,11 @@ export const CommentList = memo((props: CommentListProps) => {
                     />
                 ))
             ) : (
-                <Text text={t('Комментарии отсутствуют')} />
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={<Text text={t('Комментарии отсутствуют')} />}
+                    off={<TextDeprecated text={t('Комментарии отсутствуют')} />}
+                />
             )}
         </VStack>
     );
